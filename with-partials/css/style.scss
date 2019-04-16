@@ -1,0 +1,68 @@
+// Import partials here
+@import 'settings.variables';
+@import 'page.setup';
+
+// Set width for desktop display
+$desktop: 840px;
+
+// Mixin to enable desktop/mobile display with subsequent media query
+@mixin desktop {
+  @media (min-width: #{$desktop}) {
+    @content;
+  }
+}
+
+// Header styling
+h1 h2 {
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 0;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-top: 0;
+}
+
+// Adding flexbox to allow for responsive design
+.flex-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+  overflow: hidden;
+  section {
+    width: 100%;
+    padding: 1em;
+    @include desktop {
+      width: 50%;
+    }
+  }
+}
+
+// Styles for photo section of component
+.photo {
+  padding: 20px;
+  text-align: center;
+  img {
+    border-radius: 50%;
+    width: 250px;
+  }
+}
+
+// Styles for text part of component
+.info {
+  background-color: $bg-grey;
+  padding: 10px;
+  ul {
+    margin: 10px auto;
+  }
+  li {
+    padding-bottom: 5%;
+    text-decoration: none;
+    list-style: none;
+  }
+}
